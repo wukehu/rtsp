@@ -12,7 +12,7 @@ public:
 	UDPServer();
 	virtual ~UDPServer();
 public:
-	//ÉèÖÃ¼àÌı¶Ë¿Ú;
+	//è®¾ç½®ç›‘å¬ç«¯å£;
 	void setBindAddr(const InetAddr& p_objInetAddr);
 	const InetAddr& getBindAddr()const;
 
@@ -20,9 +20,9 @@ public:
 	void stop();
 	
 #ifdef WIN32
-	static PUB_THREAD_RESULT _stdcall UDPServerThread(void *pParam);
+	static THREAD_RESULT _stdcall UDPServerThread(void *pParam);
 #else
-	static PUB_THREAD_RESULT  UDPServerThread(void *pParam);
+	static THREAD_RESULT  UDPServerThread(void *pParam);
 #endif
 
 protected:
@@ -31,10 +31,10 @@ protected:
 private:
 	int run();
 protected:
-	InetAddr                    m_objInetAddr;         //¼àÌıµØÖ·
-	UDPTransfer*                m_pobjListenTransfer;  //¼àÌı´«ÊäÆ÷
-	thread_t                    m_nServerThreadId;     //·şÎñÏß³Ì
-	bool                        m_bThreadRunFlag;      //¼àÌı·şÎñÏß³ÌÔËĞĞ±ê¼Ç
+	InetAddr                    m_objInetAddr;         //ç›‘å¬åœ°å€
+	UDPTransfer*                m_pobjListenTransfer;  //ç›‘å¬ä¼ è¾“å™¨
+	thread_t                    m_nServerThreadId;     //æœåŠ¡çº¿ç¨‹
+	bool                        m_bThreadRunFlag;      //ç›‘å¬æœåŠ¡çº¿ç¨‹è¿è¡Œæ ‡è®°
 };
 
 #endif /*__UDP_SERVER_H__*/
