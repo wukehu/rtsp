@@ -33,8 +33,8 @@
 #include <unistd.h>
 	#define GET_LAST_ERROR  	 errno
 	#define CLOSESOCKET     	 close
-	#define SOCKET               int
-	#define GET_CURRENT_THREADID syscall(__NR_gettid)
+	#define SOCKET                   int
+	#define GET_CURRENT_THREADID     syscall(__NR_gettid)
 #endif
 
 #endif /*__OS_DEFINE_H__*/
