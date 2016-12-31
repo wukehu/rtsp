@@ -9,6 +9,10 @@
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 TCPTransfer::TCPTransfer()
 {

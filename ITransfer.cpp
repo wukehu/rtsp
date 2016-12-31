@@ -1,9 +1,9 @@
 #include "ITransfer.h"
 #include "VioletError.h"
 #include "VioletLog.h"
-
 #include <sys/types.h>			
 #include <sys/socket.h>
+#include <time.h>
 
 
 ITransfer::ITransfer()

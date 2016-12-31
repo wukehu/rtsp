@@ -11,7 +11,7 @@
 #define __LOG_COLOR_WHITE 		"0;37"
 
 #ifdef _LOG_NO_COLOR
-	#define __LOG_COLOR(COLOR, context, fmt, args...) printf("[@%s]: "#fmt" \n", context, ##args)
+	#define __LOG_COLOR(COLOR, context, fmt, args...) printf("[@%p]: "#fmt" \n", context, ##args)
 #else
 	#define __LOG_COLOR(COLOR, context, fmt, args...)  								\
 	do {																			\ 	

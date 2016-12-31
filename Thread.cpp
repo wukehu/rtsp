@@ -2,7 +2,7 @@
 #include "OS_define.h"
 thread_t createThread(_start_routine start_routine, void* pParam, bool *pRun)
 {	
-	PUB_thread_t threadID;
+	thread_t threadID;
 	if (NULL != pRun) 
 	{
 		*pRun = true;

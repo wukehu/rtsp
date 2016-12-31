@@ -1,7 +1,9 @@
 #ifndef __RTSP_SERVER_H__
 #define __RTSP_SERVER_H__
 
-class RtspServer
+#include "TCPServer.h"
+
+class RtspServer : public TCPServer
 {
 public:
   RtspServer();
@@ -10,7 +12,8 @@ public:
 public:
   int start();
   int stop();
-  
+
+  TCPLinkReceiver* creatTCPLinkReceiver() ;
 private:
 };
 

@@ -4,7 +4,8 @@
 #include "TCPLinkReceiver.h"
 #include "VioletLog.h"
 #include "VioletTime.h"
-
+#include "OS_Define.h"
+#include <time.h>
 
 //TCP连接超时时间
 #define MAX_CONNETION_TIMEOUT_VAL  60
@@ -14,13 +15,13 @@ TCPServer::TCPServer()
 ,m_nMaxConnectionCount(10)
 ,m_objListenTCPTransfer(NULL)
 {
-	PUB_InitLock(&m_objLock);
+	LOCK_INIT(&m_objLock);
 }
 
 TCPServer::~TCPServer()
 {
 	stop();
-	PUB_DestroyLock(&m_objLock);
+	LOCK_UNINIT(&m_objLock);
 }
 
 void TCPServer::setBindAddr(const InetAddr& p_objInetAddr)
@@ -156,7 +157,7 @@ int TCPServer::run()
 			clearTimeOutConnection();
 			nInterval= 0;
 		}
-		PUB_Sleep(2);
+		OS_Sleep(2);
 	}
 	return VIOLET_SUCCESS;
 }

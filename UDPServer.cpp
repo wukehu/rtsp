@@ -92,7 +92,7 @@ int UDPServer::run()
 		int nRet = m_pobjListenTransfer->recvFrom(szBuf, RECV_BUFFER_SIZE, objFromInetAddr, 5000);
 		if (VIOLET_SUCCESS >= nRet)
 		{
-			PUB_Sleep(5);
+			OS_Sleep(5);
 			continue;
 		}
 
