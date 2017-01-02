@@ -35,6 +35,7 @@
 #else
 #include <errno.h>
 #include <unistd.h>
+#include <arpa/inet.h>
 	#define GET_LAST_ERROR  	        errno
 	#define CLOSESOCKET     	        close
 	#define SOCKET                      int
